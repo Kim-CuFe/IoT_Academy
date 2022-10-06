@@ -26,7 +26,7 @@ static void PingPong_Process(void)
                     "\n\r");
 						
 						// APP_LOG(TS_ON, VLEVEL_L, "%s \n\r", (const char *)BufferRx);
-						
+						// APP_LOG(TS_ON, VLEVEL_L, "%s \n\r", &BufferRx);
             APP_LOG(TS_ON, VLEVEL_L, "Master Tx start\n\r");
             memcpy(BufferTx, PING, sizeof(PING) - 1);
             Radio.Send(BufferTx, PAYLOAD_LEN);
@@ -66,7 +66,8 @@ static void PingPong_Process(void)
 						//			"PONG_CuFe"
                     "\n\r");
 						
-						//APP_LOG(TS_ON, VLEVEL_L, "%s \n\r", (const char *)BufferRx);
+						// APP_LOG(TS_ON, VLEVEL_L, "%s \n\r", (const char *)BufferRx);
+            // APP_LOG(TS_ON, VLEVEL_L, "%s \n\r", &BufferRx);
 						
             APP_LOG(TS_ON, VLEVEL_L, "Slave  Tx start\n\r");
             memcpy(BufferTx, PONG, sizeof(PONG) - 1);
